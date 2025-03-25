@@ -1,70 +1,107 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
+
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2566">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
+
+    <style>
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            font-size: 24px;
+
+            text-align: center;
+
+            padding: 20px;
+
+        }
+
+        #text {
+
+            border-right: 3px solid black;
+
+            padding-right: 5px;
+
+        }
+
+    </style>
+
 </head>
+
 <body>
-<p class="p1">&lt;html&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: Arial, sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 24px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>#text {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-right: 3px solid black;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding-right: 5px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;span id="text"&gt;&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const texts = [</p>
-<p class="p1"><span class="Apple-converted-space">            </span>"I am a Business Analyst enthusiast.",</p>
-<p class="p1"><span class="Apple-converted-space">            </span>"I am a Data Analyst enthusiast.",</p>
-<p class="p1"><span class="Apple-converted-space">            </span>"I am a Digital Transformation enthusiast."</p>
-<p class="p1"><span class="Apple-converted-space">        </span>];</p>
-<p class="p1"><span class="Apple-converted-space">        </span>let index = 0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>let letterIndex = 0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>let currentText = "";</p>
-<p class="p1"><span class="Apple-converted-space">        </span>let isDeleting = false;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>function type() {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>if (!isDeleting &amp;&amp; letterIndex &lt; texts[index].length) {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>currentText = texts[index].slice(0, ++letterIndex);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>} else if (isDeleting &amp;&amp; letterIndex &gt; 0) {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>currentText = texts[index].slice(0, --letterIndex);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById("text").textContent = currentText;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>let speed = isDeleting ? 50 : 100;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>if (!isDeleting &amp;&amp; letterIndex === texts[index].length) {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>speed = 1500;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>isDeleting = true;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>} else if (isDeleting &amp;&amp; letterIndex === 0) {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>isDeleting = false;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>index = (index + 1) % texts.length;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>speed = 500;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>setTimeout(type, speed);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>type();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+
+    <span id="text"></span>
+
+    <script>
+
+        const texts = [
+
+            "I am a Business Analyst enthusiast.",
+
+            "I am a Data Analyst enthusiast.",
+
+            "I am a Digital Transformation enthusiast."
+
+        ];
+
+        let index = 0;
+
+        let letterIndex = 0;
+
+        let currentText = "";
+
+        let isDeleting = false;
+
+
+
+        function type() {
+
+            if (!isDeleting && letterIndex < texts[index].length) {
+
+                currentText = texts[index].slice(0, ++letterIndex);
+
+            } else if (isDeleting && letterIndex > 0) {
+
+                currentText = texts[index].slice(0, --letterIndex);
+
+            }
+
+
+
+            document.getElementById("text").textContent = currentText;
+
+
+
+            let speed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && letterIndex === texts[index].length) {
+
+                speed = 1500;
+
+                isDeleting = true;
+
+            } else if (isDeleting && letterIndex === 0) {
+
+                isDeleting = false;
+
+                index = (index + 1) % texts.length;
+
+                speed = 500;
+
+            }
+
+
+
+            setTimeout(type, speed);
+
+        }
+
+
+
+        type();
+
+    </script>
+
 </body>
+
 </html>

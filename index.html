@@ -5,23 +5,18 @@
     <style>
 
         body {
-
             font-family: Arial, sans-serif;
-
             font-size: 24px;
-
             text-align: center;
-
             padding: 20px;
-
+            background-color: black; /* Dark background for visibility */
+            color: white; /* White text for contrast */
         }
 
         #text {
-
-            border-right: 3px solid black;
-
+            border-right: 3px solid white; /* White cursor effect */
             padding-right: 5px;
-
+            color: white; /* Ensures text stays white */
         }
 
     </style>
@@ -35,68 +30,37 @@
     <script>
 
         const texts = [
-
             "I am a Business Analyst enthusiast.",
-
             "I am a Data Analyst enthusiast.",
-
             "I am a Digital Transformation enthusiast."
-
         ];
 
         let index = 0;
-
         let letterIndex = 0;
-
         let currentText = "";
-
         let isDeleting = false;
 
-
-
         function type() {
-
             if (!isDeleting && letterIndex < texts[index].length) {
-
                 currentText = texts[index].slice(0, ++letterIndex);
-
             } else if (isDeleting && letterIndex > 0) {
-
                 currentText = texts[index].slice(0, --letterIndex);
-
             }
-
-
 
             document.getElementById("text").textContent = currentText;
 
-
-
             let speed = isDeleting ? 50 : 100;
-
             if (!isDeleting && letterIndex === texts[index].length) {
-
                 speed = 1500;
-
                 isDeleting = true;
-
             } else if (isDeleting && letterIndex === 0) {
-
                 isDeleting = false;
-
                 index = (index + 1) % texts.length;
-
                 speed = 500;
-
             }
 
-
-
             setTimeout(type, speed);
-
         }
-
-
 
         type();
 
